@@ -10,8 +10,7 @@ class Program
         string gradePercentageInput = Console.ReadLine();
         int gradePercentage = int.Parse(gradePercentageInput);
 
-        char inputLastDigit = gradePercentageInput[gradePercentageInput.Length - 1];
-        int gradeLastDigit = (int)Char.GetNumericValue(inputLastDigit);
+        int gradeLastDigit = gradePercentageInput[gradePercentageInput.Length - 1];
 
         string letterGrade = "";
         string gradeSign = "";
