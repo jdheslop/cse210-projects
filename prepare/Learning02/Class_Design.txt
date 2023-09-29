@@ -1,0 +1,22 @@
+
+
+
+
+Class: Job
+Attributes:
+_company : string
+_jobTitle :  string
+_startYear : int
+_endYear : int
+Methods:
+DisplayJobInformation() : void
+    "Job Title (Company) StartYear-EndYear"
+
+
+Class: Resume
+Attributes:
+_name : string
+_jobs : List<Job>
+Methods:
+DisplayResume() : void
+    Displays the resume, which shows the name first, followed by displaying each one of the jobs
