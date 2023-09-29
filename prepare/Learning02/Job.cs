@@ -1,3 +1,4 @@
+using System;
 
 /*
 Class: Job
@@ -10,8 +11,6 @@ Methods:
 DisplayJobInformation() : void
     "Job Title (Company) StartYear-EndYear"
 */
-
-using System
 
 public class Job
     {

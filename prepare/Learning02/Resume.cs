@@ -1,3 +1,4 @@
+using System;
 
 /*
 Class: Resume
@@ -9,8 +10,6 @@ DisplayResume() : void
     Displays the resume, which shows the name first, followed by displaying each one of the jobs
 */
 
-using System
-
 public class Resume
     {
         public string _name;
@@ -18,6 +17,8 @@ public class Resume
 
         public void DisplayResume()
         {
+            Console.WriteLine();
+
             Console.WriteLine($"Name: {_name}");
             Console.WriteLine("Jobs:");
 
