@@ -119,6 +119,7 @@ Methods:
     LoadFromTextFile(list) : void
 
 
+THIS WAS WRITTEN IN WEEK 3 AND I ENDED UP CHANGING A FEW THINGS WHEN WRITING THE PROGRAM IN WEEK 4. HOWEVER, I DIDN'T UPDATE THIS TEXT.
 A. In Program.cs, a variable named "repeat" will be defined as true and will use a while loop as long as it remains true.
 B. The DisplayMenu method will display the menu options and will return the user selection as an integer.
 C. In the Program.cs a if, else if, and else statements will execute the following according to the user selection:
@@ -141,25 +142,4 @@ C. In the Program.cs a if, else if, and else statements will execute the followi
     5. Quit the program
         - Changes the "repeat" variable to be False so that it leaves the while loop and ends the program.
 D. If the user enters a different integer for the menu selection then it will display an invalid entry message and display the menu again.
-
-
-
-
-Class: Job
-Attributes:
-_company : string
-_jobTitle :  string
-_startYear : int
-_endYear : int
-Methods:
-DisplayJobInformation() : void
-    "Job Title (Company) StartYear-EndYear"
-
-Class: Resume
-Attributes:
-_name : string
-_jobs : List<Job>
-Methods:
-DisplayResume() : void
-    Displays the resume, which shows the name first, followed by displaying each one of the jobs
 
