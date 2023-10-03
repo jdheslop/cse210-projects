@@ -21,7 +21,7 @@ class Program
     {
         //Instantiate classes and define attributes
         Menu menu1 = new Menu();
-        menu1._menuIntro = "Please select on of the following choices:";
+        menu1._menuIntro = "Please select one of the following choices:";
         menu1._menuItems.Add("1. Write a new entry using a prompt");
         menu1._menuItems.Add("2. Write a new entry without a prompt");
         menu1._menuItems.Add("3. Display the journal");
