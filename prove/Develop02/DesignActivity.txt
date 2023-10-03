@@ -1,0 +1,165 @@
+
+
+Step 4: Review the Program Specification
+Refer to the Journal program specification. As a team, review the program requirements and how it is supposed to work.
+
+    1. What does the program do?
+    Provide a menu with the following options and functions.
+    - Write a new entry
+    - Display the journal
+    - Save the journal to a file
+    - Load the journal from a file
+    - Quit the program
+
+
+    2. What user inputs does it have?
+    - User input to select options from a menu
+    - User input for journal entry text
+    - User input for file location (to save the journal)
+    - User input for file location (to load journal)
+
+    - Input from a text file to load the journal entries
+
+
+    3. What output does it produce?
+    - Output to a text file to save the journal entries
+
+
+    4. How does the program end?
+    - User input as a selection option from a menu
+
+
+Step 5: Determine the classes
+    1. What are good candidates for classes in this program?
+    - Entry
+    - Journal
+    - PromptGenerator
+    - SaveToFile
+    - LoadFromFile
+    - GenerateMenu ?
+
+
+    2. What are the primary responsibilities of each class?
+    - Entry: Receive and save the entries
+    - Journal: Compile and display the entries
+    - PromptGenerator: Select a random prompt
+    - SaveToFile: Save the journal entries to a file
+    - LoadFromFile: Retrieve the journal entries from a file
+    - GenerateMenu ?: Display the menu and return the user selection
+
+
+Step 6: Define class behaviors
+1. What are the behaviors this class will have in order to fulfill its responsibilities? (In other words, what things should this class do?)
+    - Entry: Hold and display data
+    - Journal: Add an entry, display all entries, save to a file, load from a file
+    - PromptGenerator: 
+    - SaveToFile: 
+    - LoadFromFile: 
+    - GenerateMenu ?: 
+
+Step 7: Define class attributes
+    1. What attributes does this class need to fulfill its behaviors? (In other words, what variables should this class store?)
+    Entry: _date, _prompt, _entryInput
+    Journal: List<Entry>
+    PromptGenerator: List<prompts>
+    
+    2. What are the data types of these member variables?
+
+
+
+Class: Menu
+Displays the menu and then returns the user selection
+Attributes:
+    _menuIntro : string
+    _menuItems : List<string>
+    _menuQuit : string
+    _menuClosing : string
+Methods:
+    DisplayMenu() : int
+
+
+Class: Journal
+Attributes:
+    _entries : List<Entry>
+Methods:
+    AddEntry() : void
+    DisplayAllEntries() : void
+
+Class: Entry
+Attributes:
+    _date : string
+    _prompt : string
+    _entryInput : string
+Methods:
+    DisplayEntry() : void
+    GenerateDate() : string
+
+Class: PromptGenerator: 
+Attributes:
+    _prompts : List<string>
+Methods:
+    GeneratePrompt() : string
+
+Class: UserInputAsString
+Attributes:
+    _inputPrompt : string
+Methods:
+    GetUserInputAsString() : string
+
+Class: SaveJournalToTextFile
+Attributes:
+    _fileName : string
+Methods:
+    WriteToTextFile(list) : void 
+
+Class: LoadJournalFromTextFile
+Attributes:
+    _fileName : string
+Methods:
+    LoadFromTextFile(list) : void
+
+
+A. In Program.cs, a variable named "repeat" will be defined as true and will use a while loop as long as it remains true.
+B. The DisplayMenu method will display the menu options and will return the user selection as an integer.
+C. In the Program.cs a if, else if, and else statements will execute the following according to the user selection:
+    1.Write a new entry
+        - A new Entry instance will be created by the AddEntry method
+            - The GeneratePrompt method will create the user prompt
+            - The prompt will be displayed and the user enters their text
+            - The GenerateDate method creates the date
+            - The date, prompt, and user entry are stored as the Entry
+            - The Entry is added to the _entries list
+    2. Display the journal
+        - The DisplayAllEntries uses a foreach loop to parses through each Entry in the _entries list.
+        - For each Entry it calls the DisplayEntry method to display the Entry. 
+    3. Save the journal to a file
+        - Calls the SaveToFile method to save the Entries in the _entries List to a file.
+        - The user enters the name of the file.
+    4. Load the journal from a file
+        - Calls the LoadFromFile method to save the Entries in the _entries List to a file.
+        - The user enters the name of the file.
+    5. Quit the program
+        - Changes the "repeat" variable to be False so that it leaves the while loop and ends the program.
+D. If the user enters a different integer for the menu selection then it will display an invalid entry message and display the menu again.
+
+
+
+
+Class: Job
+Attributes:
+_company : string
+_jobTitle :  string
+_startYear : int
+_endYear : int
+Methods:
+DisplayJobInformation() : void
+    "Job Title (Company) StartYear-EndYear"
+
+Class: Resume
+Attributes:
+_name : string
+_jobs : List<Job>
+Methods:
+DisplayResume() : void
+    Displays the resume, which shows the name first, followed by displaying each one of the jobs
+
