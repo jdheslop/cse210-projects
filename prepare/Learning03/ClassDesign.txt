@@ -1,0 +1,19 @@
+
+
+Class: Fraction
+Attributes:
+    _numerator : int
+    _denominator : int
+Constructors:
+    Fraction()
+    Fraction(wholeNumber : int)
+    Fraction(numerator:int, denominator:int)
+Methods:
+    GetNumerator() : int
+    GetDenominator() : int
+    SetNumerator(numerator:int) : void
+    SetDenominator(denominator:int) : void
+    GenerateFraction() : string
+    GenerateDecimal() : double
+
+
