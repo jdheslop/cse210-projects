@@ -67,7 +67,7 @@ public class Fraction
     // Methods
     public string GenerateFraction()
     {
-        string fractionAsString = $"{_numerator} / {_denominator}";
+        string fractionAsString = $"{_numerator}/{_denominator}";
         return fractionAsString;
     }
     public double GenerateDecimal()
