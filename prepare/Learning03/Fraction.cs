@@ -47,14 +47,34 @@ public class Fraction
     }
 
     // Getters and Setters
-    //GetNumerator() : int
-    //GetDenominator() : int
-    //SetNumerator(numerator:int) : void
-    //SetDenominator(denominator:int) : void
+    public int GetNumerator()
+    {
+        return _numerator;
+    }
+    public int GetDenominator()
+    {
+        return _denominator;
+    }
+    public void SetNumerator(int numerator)
+    {
+        _numerator = numerator;
+    }
+    public void SetDenominator(int denominator) 
+    {
+        _denominator = denominator;
+    }
 
     // Methods
-    //GenerateFraction() : string
-    //GenerateDecimal() : double
+    public string GenerateFraction()
+    {
+        string fractionAsString = $"{_numerator} / {_denominator}";
+        return fractionAsString;
+    }
+    public double GenerateDecimal()
+    {
+        double fractionAsDouble = _numerator / _denominator;
+        return fractionAsDouble;
+    }
 
 
 }
