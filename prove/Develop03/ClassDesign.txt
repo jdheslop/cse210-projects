@@ -1,0 +1,59 @@
+
+Class: Scripture
+Attributes:
+        _words : List<Word>
+        _wordsLength : int
+_reference : Reference
+_allHidden : bool
+Constructors:
+        Scripture(Reference reference, string scriptureText)
+Getters  / Setters:
+        GetAllHidden() : bool
+Methods:
+        DisplayScripture() : void
+        CheckHiddenStatus() : bool
+        HideWords() : void
+ 
+Class: Reference
+Attributes:
+        _book : string
+        _chapter : string
+        _verse : string
+        _endingVerse : string
+        _reference : string
+Constructors:
+        Reference(string book, string chapter, string verse) : For single verse references. Combine the attributes to create _reference.
+        Reference(string book, string chapter, string verse, string endingVerse) : For multiple verse references. Combine the attributes to create _reference.
+Getters  / Setters:
+        GetReference() : string
+Methods:
+ 
+ 
+Class: Word
+Attributes:
+        _word : string
+        _removedWord : string
+        _display : bool
+Constructors:
+        Word() :  Preassign _display to “true” (do this in the Constructor: createRemovedWord() : string)
+Getters  / Setters:
+        GetDiplay()
+        SetDisplay()
+Methods:
+        DisplayWord() : void
+ 
+ 
+1.      A string variable named “scriptureText” is defined with holds the scriptural text.
+2.      A Reference object is instantiated using a contractor that includes the scriptural reference.
+3.      A Scripture object is instantiated. The Reference instance is assigned to _reference attribute. The “scriptureText” variable is split using spaces “ “ into a list. The list is parsed and a Word object is instantiated for each word. The word is assigned to the _word attribute. The length of the word is counted and the _removedWord attribute is assigned a string of underscores in that length. The default _display attribute is “true”. Each Word instance is added to the _words list in the Scripture object. The length of the _words list is counted and assigned to the _wordsLength attribute. 
+4.      The GetAllHidden() getter from the Scripture instance is used to assign the “allHidden” variable. The program is then contained in a while loop which loops as long as the “allHidden” variable is false.
+5.      The DisplayScripture() method from the Scripture object clears the screen, displays the reference, and checks the _display status of each Word. If _display  is true, then the word will be displayed. If _display is false, then the underscores will be displayed.
+6.       The “Press enter to continue or type ‘quit’ to finish: “ prompt is displayed. 
+a.      If the user enters “quit” then “all Hidden” is set to true and the program ends.
+b.      If the user hits enter:
+i.      The CheckHiddenStatus method runs in the Scripture instance. It parses through the _words list and checks the _display status. If all are false then it changes the “allHidden” variable to true and the program ends. 
+ii.     If one is true, then it moves to the next program step.
+7.      The HideWords method in the Scripture class runs. It has a counter set at 3 and then generates a random number that is between 0 and _wordsLength. It then uses SetDisplay() to change _display to “false”. Then it reduces the counter and repeats until 3 Words have been changed. 
+8.      The while loop then starts again. 
+ 
+
