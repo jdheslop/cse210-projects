@@ -8,21 +8,21 @@ class Program
 		Console.WriteLine($"Get numerator: {fraction1.GetNumerator()}");
 		Console.WriteLine($"Get denominator: {fraction1.GetDenominator()}");
 		Console.WriteLine(fraction1.GenerateFraction());
-		Console.WriteLine(fraction1.GenerateDecimel());
+		Console.WriteLine(fraction1.GenerateDecimal());
 	
         Fraction fraction2 = new Fraction(5);
 		Console.WriteLine(fraction2.GenerateFraction());
-		Console.WriteLine(fraction2.GenerateDecimel());
+		Console.WriteLine(fraction2.GenerateDecimal());
 
         Fraction fraction3 = new Fraction(3, 4);
 		Console.WriteLine(fraction3.GenerateFraction());
-		Console.WriteLine(fraction3.GenerateDecimel());
+		Console.WriteLine(fraction3.GenerateDecimal());
 
         Fraction fraction4 = new Fraction();
         fraction4.SetNumerator(1);
         fraction4.SetDenominator(3);
 		Console.WriteLine(fraction4.GenerateFraction());
-		Console.WriteLine(fraction4.GenerateDecimel());
+		Console.WriteLine(fraction4.GenerateDecimal());
     }
 }
 
