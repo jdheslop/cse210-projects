@@ -1,11 +1,8 @@
-
-
 Class: Scripture
 Attributes:
-        _words : List<Word>
-        _wordsLength : int
+    _words : List<Word>
 _reference : Reference
-_allHidden : bool
+    _allHidden : bool
 Constructors:
     Scripture(Reference reference, string scriptureText)
 Getters  / Setters:
@@ -40,17 +37,15 @@ Methods:
         DisplayWord() : void
  
  
-1.      A string variable named “scriptureText” is defined with holds the scriptural text.
-2.      A Reference object is instantiated using a contractor that includes the scriptural reference.
-3.      A Scripture object is instantiated. The Reference instance is assigned to _reference attribute. The “scriptureText” variable is split using spaces “ “ into a list. The list is parsed and a Word object is instantiated for each word. The word is assigned to the _word attribute. The length of the word is counted and the _removedWord attribute is assigned a string of underscores in that length. The default _display attribute is “true”. Each Word instance is added to the _words list in the Scripture object. The length of the _words list is counted and assigned to the _wordsLength attribute. 
-4.      The GetAllHidden() getter from the Scripture instance is used to assign the “allHidden” variable. The program is then contained in a while loop which loops as long as the “allHidden” variable is false.
-5.      The DisplayScripture() method from the Scripture object clears the screen, displays the reference, and checks the _display status of each Word. If _display  is true, then the word will be displayed. If _display is false, then the underscores will be displayed.
-6.       The “Press enter to continue or type ‘quit’ to finish: “ prompt is displayed. 
-a.      If the user enters “quit” then “all Hidden” is set to true and the program ends.
-b.      If the user hits enter:
-i.      The CheckHiddenStatus method runs in the Scripture instance. It parses through the _words list and checks the _display status. If all are false then it changes the “allHidden” variable to true and the program ends. 
-ii.     If one is true, then it moves to the next program step.
-7.      The HideWords method in the Scripture class runs. It has a counter set at 3 and then generates a random number that is between 0 and _wordsLength. It then uses SetDisplay() to change _display to “false”. Then it reduces the counter and repeats until 3 Words have been changed. 
-8.      The while loop then starts again. 
+1. A string variable named “scriptureText” is defined with holds the scriptural text.
+2. A Reference object is instantiated using a contractor that includes the scriptural reference.
+3. A Scripture object is instantiated. The Reference instance is assigned to _reference attribute. The “scriptureText” variable is split using spaces “ “ into a list. The list is parsed and a Word object is instantiated for each word. The word is assigned to the _word attribute. The length of the word is counted and the _removedWord attribute is assigned a string of underscores in that length. The default _display attribute is “true”. Each Word instance is added to the _words list in the Scripture object.
+4. The DisplayScripture() method from the Scripture object has a while loop which loops as long as the “allHidden” variable is false. It clears the screen, displays the reference, and checks the _display status of each Word. If _display  is true, then the word will be displayed. If _display is false, then the underscores will be displayed.
+5. The “Press enter to continue or type ‘quit’ to finish: “ prompt is displayed. 
+If the user enters “quit” then “all Hidden” is set to true and the program ends.
+If the user hits enter:
+The CheckHiddenStatus method runs in the Scripture instance. It parses through the _words list and checks the _display status. If all are false then it changes the “allHidden” variable to true and the program ends. 
+If one is true, then it moves to the next program step.
+7. The HideWords method in the Scripture class runs. It has a counter set at 3 and then generates a random number that is between 0 and _wordsLength. It then uses SetDisplay() to change _display to “false”. Then it reduces the counter and repeats until 3 Words have been changed. 
+8. The while loop then starts again. 
  
-
