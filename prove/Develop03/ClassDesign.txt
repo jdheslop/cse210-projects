@@ -6,7 +6,6 @@ _reference : Reference
 Constructors:
     Scripture(Reference reference, string scriptureText)
 Getters  / Setters:
-    GetAllHidden() : bool
 Methods:
     DisplayScripture() : void
     CheckHiddenStatus() : bool

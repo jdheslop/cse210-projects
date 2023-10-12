@@ -18,17 +18,18 @@ public class Reference
     // Constructors
     public Reference(string book, string chapter, string verse)
     {
-        _reference = $”{book} {chapter}:{verse}”;
+        _reference = $"{book} {chapter}:{verse}";
     }
  
     public Reference(string book, string chapter, string verse, string endingVerse)
     {
-        _reference = $”{book} {chapter}:{verse}-{endingVerse}”;
+        _reference = $"{book} {chapter}:{verse}-{endingVerse}";
     }
  
     // Getters / Setters
     public string GetReference()
     {
         return _reference;
+    }
     }
  
