@@ -38,8 +38,6 @@ public class Scripture
             }
         }
  
-        //Getters and Setters
- 
         //Methods
         public void DisplayScripture()
         {
@@ -62,8 +60,6 @@ public class Scripture
  
                 if (userInput == "quit")
                 {
-                    Console.WriteLine();
-                    Console.WriteLine();
                     _allHidden = true;
                 }
                 else
@@ -72,6 +68,7 @@ public class Scripture
                     HideWords();
                 }
             }
+            Console.WriteLine();
         }
  
         private bool CheckHiddenStatus()
@@ -92,18 +89,24 @@ public class Scripture
         private void HideWords()
         {
             int counter = 0;
+            bool allWordsHidden = _allHidden;
 
-            while (counter < 3)
-            {
+            //Hide three words each time or if there are less than 3 visible words left, then stop when all are hidden.
+            while (counter < 3 && allWordsHidden == false)
+            {   
+                //Select a random Word from the _words list
                 Random random = new Random();
                 int randomIndex = random.Next(0, _words.Count);
-                _words[randomIndex].SetDisplay(false);
-                counter += 1;
+                bool displayStatus = _words[randomIndex].GetDisplay();
+
+                // If the selected Word is still visible then hide it.
+                if (displayStatus == true)
+                {
+                    _words[randomIndex].SetDisplay(false);
+                    counter += 1;
+                    allWordsHidden = CheckHiddenStatus();
+                }
             }
         }
-
- 
- 
- 
 }
 
