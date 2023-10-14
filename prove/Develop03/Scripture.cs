@@ -31,7 +31,7 @@ public class Scripture
  
             string[] scriptureWords = scriptureText.Split(" ");
  
-            foreach (scriptureWord in scriptureWords)
+            foreach (string scriptureWord in scriptureWords)
             {
                 Word wordForList = new Word(scriptureWord);
                 _words.Add(wordForList);    
@@ -45,28 +45,31 @@ public class Scripture
         {
             while (_allHidden == false)
             {
-                //NEED TO ADD PROGRAM TO CLEAR THE SCREEN
+                Console.Clear();
  
-                Console.Write($"{_reference} - ");
+                Console.Write($"{_reference} ");
  
-                foreach (scriptureWord in _words)
+                foreach (Word scriptureWord in _words)
                 {
                     scriptureWord.DisplayWord();
                     Console.Write(" ");
                 }
  
                 Console.WriteLine();
+                Console.WriteLine();
                 Console.Write("Press enter to continue or type 'quit' to finish: ");
                 string userInput = Console.ReadLine();
  
                 if (userInput == "quit")
                 {
+                    Console.WriteLine();
+                    Console.WriteLine();
                     _allHidden = true;
                 }
                 else
                 {
-                    _allHidden = CheckHiddenStatus()
-                    // ADD HIDEWORDS METHOD
+                    _allHidden = CheckHiddenStatus();
+                    HideWords();
                 }
             }
         }
@@ -75,20 +78,30 @@ public class Scripture
         {
             bool allHiddenStatus = true;
  
-            foreach (scriptureWord in _words)
+            foreach (Word scriptureWord in _words)
             {
-                wordDisplayStatus = scriptureWord.GetDisplay();
+                bool wordDisplayStatus = scriptureWord.GetDisplay();
                 if (wordDisplayStatus == true)
                 {
                     allHiddenStatus = false;
                 }
- 
-                return allHiddenStatus;
             }
+            return allHiddenStatus;
         }
  
- 
-        // WRITE HIDEWORDS() METHOD - this can also be private
+        private void HideWords()
+        {
+            int counter = 0;
+
+            while (counter < 3)
+            {
+                Random random = new Random();
+                int randomIndex = random.Next(0, _words.Count);
+                _words[randomIndex].SetDisplay(false);
+                counter += 1;
+            }
+        }
+
  
  
  

@@ -26,8 +26,7 @@ public class Word
         public Word(string word)
         {
             _word = word;
-            string underscoreWord = new string('_', word.Length);
-            _removedWord = underscoreWord;
+            _removedWord = new string('_', word.Length);
             _display = true;
         }
  
