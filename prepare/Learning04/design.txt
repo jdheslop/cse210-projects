@@ -1,0 +1,75 @@
+
+Base Class: Assignment
+    Attributes:
+        private string _studentName;
+        private string _topic;
+    Constructors:
+        Assignment(string studentName, string topic)
+    Getters / Setters:
+        public string GetStudentName() : For Derived Class: WritingAssignment 
+    Methods:
+        public string AssignmentSummary()
+            _studentName, _topic
+
+
+Derived Class: MathAssignment - Base: Assignment
+    Attributes:
+        ASSIGNMENT: private string _studentName;
+        ASSIGNMENT: private string _topic;
+        private string _textbookSection;
+        private string _sectionProblems;
+
+        A Math assignment may need to store the student's name, the topic (for example, "Fractions"), the textbook section (for example, "7.3"), and the problems from that section (for example, "3-10, 20-21").
+
+    Constructors:   
+        MathAssignment(string studentName, string topic, string textbookSection, string sectionProblems) : base(studentName, topic)
+
+        The Math assignment should have a constructor that requires a value for each of the items that it stores.
+
+    Getters / Setters:
+    Methods:
+        ASSIGNMENT: AssignmentSummary()
+            _studentName, _topic
+        public string MathHomeworkList()
+            _textbookSection, _sectionProblems
+
+        The Math assignment needs to provide a method to return a summary of the assignment that contains the student's name and the topic, and it also needs to provide a method to display the Math homework list including the section number and the problems (for example, "Section 7.3 Problems 8-19").
+
+
+Derived Class: WritingAssignment - Base: ASSIGNMENT
+    Attributes:
+        ASSIGNMENT: private string _studentName;
+        ASSIGNMENT: private string _topic;
+        private string _assignmentTitle;
+
+        A writing assignment may need to store the student's name, the topic (for example, "European History"), and the title of the assignment (for example, "The Causes of World War II").
+
+    Constructors:
+        WritingAssignment(string studentName, string topic, string assignmentTitle) : base(studentName, topic)
+
+        The writing assignment should have a constructor that requires a value for each of the items that it stores.
+
+    Getters / Setters:
+    Methods:
+        ASSIGNMENT: AssignmentSummary()
+            _studentName, _topic
+        public string WritingInformation()
+            _assignmentTitle, _studentName
+
+        The writing assignment needs to provide a method to return a summary of the assignment that contains the student's name and the topic, and it also needs to provide a method to get the writing information which consists of the title and the student's name (for example, "The Causes of World War II by Mary Waters").
+
+
+
+
+
+Class:
+    Attributes:
+    Constructors:
+    Getters / Setters:
+    Methods:
+
+Class:
+    Attributes:
+    Constructors:
+    Getters / Setters:
+    Methods:
