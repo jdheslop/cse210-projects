@@ -1,14 +1,3 @@
-/*
-Class: PromptList
-    //Attributes
-        private List<Prompt> _prompts
-        private string _prompt
-    //Constructors
-        public PromptList(List<string> prompts)
-    //Methods
-        public string GetPrompt()
-        private void CheckAllAvailabilty()
-*/
 
 class PromptList
 {

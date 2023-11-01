@@ -1,21 +1,3 @@
-/*
-Derived Class: ReflectingActivity : Activity
-    //Attributes
-        private List<string> _reflectingPromptList = new List<string>();
-        private PromptList _reflectingPrompts;
-        private string _reflectingPrompt;
-        
-        private List<string> _reflectingQuestionList = new List<string>();
-        private PromptList _reflectingQuestions;
-        private string _question;
-    //Constructors
-        ReflectingActivity()
-    //Methods
-        private string CreateReflectingPrompt(PromptList prompts)
-        private void DisplayPrompt()
-        public void RunReflectingActivity()
-
-*/
 
 class ReflectingActivity : Activity
 {

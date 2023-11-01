@@ -1,14 +1,3 @@
-/*
-Class: Prompt
-    //Attributes
-        private string _promptText
-        private bool _promptAvailable
-    //Constructors
-        Prompt(string promptText)
-    //Getters & Setters
-        public bool GetPromptAvailability()
-        public SetPromptAvailability()
-*/
 
 class Prompt
 {

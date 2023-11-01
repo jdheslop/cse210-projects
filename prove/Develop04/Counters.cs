@@ -1,17 +1,3 @@
-/*
-Class: Counters
-    //Attributes
-        private int _breathingCounter
-        private int _reflectingCounter
-        private int _listingCounter
-    //Constructors
-        Counters() - sets all of the counters to 0
-    //Methods
-        public void increaseBreathingCounter()
-        public void increaseReflectingCounter()
-        public void increaseListingCounter()
-        public void DisplayCounters()
-*/
 
 class Counters
 {

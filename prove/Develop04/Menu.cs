@@ -1,22 +1,4 @@
 
-/*
-Class: Menu
-    //Attributes
-        private string _menuHeader;
-        private string _menuItem1;
-        private string _menuItem2;
-        private string _menuItem3;
-        private string _menuItem4;
-        private string _menuClosing;
-        private int _userInput;
-    //Constructors
-        Menu - Define all of the string variables when calling the constructor
-            _menuHeader = "Menu Options:"
-            etc.
-    //Methods
-        public int DisplayMenu()
-*/
-
 public class Menu
     {
         //Attributes

@@ -1,17 +1,3 @@
-/*
-Derived Class: ListingActivity : Activity
-    //Attributes
-        private List<string> _listingPromptList = new List<string>();
-        private PromptList _listingPrompts;
-        private string _listingPrompt;
-        private int _counter;
-    //Constructors
-        ListingActivity()
-    //Methods
-        private string CreateListingPrompt(PromptList prompts)
-        private void DisplayPrompt()
-        public void RunListingActivity()
-*/
 
 class ListingActivity : Activity
 {

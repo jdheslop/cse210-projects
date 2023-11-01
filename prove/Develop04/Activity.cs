@@ -1,26 +1,3 @@
-/*
-Base Class: Activity
-    //Attributes
-        protected string _activityName;
-        protected string _description;
-        protected int _duration;
-        protected DateTime _startTime;
-        protected DateTime _endTime;
-
-        protected double _activityDuration;
-
-        protected DateTime _spinnerStartTime;
-        protected DateTime _spinnerEndTime;
-
-    //Constructors
-        Activity() - No additional actions
-        
-    //Methods
-        protected void DisplayIntro()
-        protected void DisplayClosing()
-        protected void DisplaySpinner(string message, int duration)
-        protected void DisplayCountdownTimer(string message, int countdown)
-*/
 
 class Activity
 {

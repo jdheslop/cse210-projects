@@ -1,12 +1,3 @@
-/*
-Derived Class: BreathingActivity : Activity
-    //Attributes
-        None
-    //Constructors
-        BreathingActivity()
-    //Methods
-        public void RunBreathingActivity()
-*/
 
 class BreathingActivity : Activity
 {
