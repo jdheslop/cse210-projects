@@ -33,8 +33,8 @@ class Activity
 
     protected int _activityDuration;
     
-    protected DateTime _spinnerStartTime;
-    protected DateTime _spinnerEndTime;
+    private DateTime _spinnerStartTime;
+    private DateTime _spinnerEndTime;
 
     // Methods
     protected void DisplayIntro()
