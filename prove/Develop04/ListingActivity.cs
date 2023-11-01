@@ -38,17 +38,6 @@ class ListingActivity : Activity
     }
 
     // Methods
-    private string CreateListingPrompt(PromptList prompts)
-    {
-        return prompts.GetPrompt();
-    }
-    
-    private void DisplayPrompt(string prompt)
-    {
-        Console.WriteLine("Consider the following prompt:");
-        Console.WriteLine($"--- {prompt} ---");
-    }
-
     public void RunListingActivity()
     {
         DisplayIntro();
@@ -79,5 +68,16 @@ class ListingActivity : Activity
         Console.WriteLine();
         Console.WriteLine($"You listed {_counter} items!");
         DisplayClosing();
+    }
+
+    private string CreateListingPrompt(PromptList prompts)
+    {
+        return prompts.GetPrompt();
+    }
+    
+    private void DisplayPrompt(string prompt)
+    {
+        Console.WriteLine("Consider the following prompt:");
+        Console.WriteLine($"--- {prompt} ---");
     }
 }

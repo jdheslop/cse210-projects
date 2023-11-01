@@ -67,7 +67,5 @@ class PromptList
         }
         return _prompt;
     }
-
-
 }
 

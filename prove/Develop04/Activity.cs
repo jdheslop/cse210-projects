@@ -93,7 +93,4 @@ class Activity
         } 
         Console.WriteLine();
     }
-
-
-
 }

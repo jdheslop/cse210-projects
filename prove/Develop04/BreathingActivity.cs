@@ -27,7 +27,6 @@ class BreathingActivity : Activity
         Console.Clear();
         Console.WriteLine();
 
-        _activityDuration = 0;
         _startTime = DateTime.Now;
         _endTime = _startTime.AddSeconds(_duration);
         
@@ -35,7 +34,6 @@ class BreathingActivity : Activity
         {
             DisplayCountdownTimer("Breath in... ", 4);
             DisplayCountdownTimer("Now breathe out... ", 6);
-            _activityDuration += 10;
             Console.WriteLine();
         }
         

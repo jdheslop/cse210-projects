@@ -55,17 +55,6 @@ class ReflectingActivity : Activity
     }
 
     // Methods
-    private string CreateReflectingPrompt(PromptList prompts)
-    {
-        return prompts.GetPrompt();
-    }
-
-    private void DisplayPrompt(string prompt)
-    {
-        Console.WriteLine("Consider the following prompt:");
-        Console.WriteLine($"--- {prompt} ---");
-    }
-
     public void RunReflectingActivity()
     {
         DisplayIntro();
@@ -96,5 +85,16 @@ class ReflectingActivity : Activity
         TimeSpan timeDifference = DateTime.Now - _startTime;
         _activityDuration = (int)timeDifference.TotalSeconds;
         DisplayClosing();
+    }
+
+    private string CreateReflectingPrompt(PromptList prompts)
+    {
+        return prompts.GetPrompt();
+    }
+
+    private void DisplayPrompt(string prompt)
+    {
+        Console.WriteLine("Consider the following prompt:");
+        Console.WriteLine($"--- {prompt} ---");
     }
 }
