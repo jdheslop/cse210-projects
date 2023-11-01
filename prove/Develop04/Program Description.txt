@@ -1,0 +1,132 @@
+
+
+PROGRAM DESCRIPTION
+Create a Menu instance
+Create a Counters instance
+Define a boolean variable named "repeat" that is "true".
+Create a while loop that repeats while "repeat" is true
+Display the menu and get user menu selection
+Use "if" and "else if" statements to run different aspects of the program.
+    - If the user enters 1, 2, or 3, then the program for the selected activity will run.
+    - If the user enters 5 it will display how many times each activity has been completed.
+    - If the user selects "5" then the it will display an end of program comment and change the "repeat" variable to "false".
+    - If the user enters something else, then will display an error message. 
+
+A. DisplayMenu()
+    Display: 
+        Console.Clear();
+        "Menu Options:
+            1. Start breathing activity
+            2. Start reflecting activity
+            3. Start listing activity
+            5. Quit
+        Select choice from the menu:"
+    Input: User input of 1-5, anything else should lead to an error and display the menu again.
+
+B. User Input 1
+    class BreathingActivity breathing = new BreathingActivity()
+        _activityName = "Breathing"
+        _description = "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing."
+    breathing.RunBreathingActivity{
+        DisplayIntro() {
+            Console.WriteLine($"Welcome to the {_activityName} Activity.)
+            Console.WriteLine()
+            Console.WriteLine(_description)
+            Console.WriteLine()
+            Console.Write("How long, in seconds, would you like for your session? ")
+            _duration = int.Parse(Console.ReadLine());
+            SpinnerWithMessage("Get ready...", int duration)
+        Display - Repeats for the duration:
+                DisplayCountdownTimer("Breath in...", 4)
+                DisplayCountdownTimer("Now breathe out...", 6)
+                Console.WriteLine()
+            }
+        DisplayClosing() { 
+            SpinnerWithMessage("Well done!!", int duration)
+            Console.WriteLine($"You have completed another {_duration} seconds of the {_activityName} Activity")
+            DisplaySpinner(duration)
+        counters.increaseBreathingCounter()
+        }
+    }
+    Return to Menu
+
+C. User Input 2:
+    class ReflectingActivity reflecting = new ReflectingActivity()
+        _activityName = "Reflecting"
+        _description = "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life."
+        string[] reflectingPrompts = {See prompts from instructions}
+        class GeneratePrompt newPrompt = new GeneratePrompt(reflectingPrompts)
+            foreach (string reflectingPrompt in reflectingPrompts)
+            {
+                Prompt promptForList = new Prompt(reflectingPrompt);
+                    _promptText = reflectingPrompt;
+                    _promptAvailable = true;
+                _prompts.Add(promptForList);
+            }
+        _reflectingPrompt = newPrompt.GetPrompt() {
+            CheckAllAvailabilty()
+                If all are false, then reset all to be true
+            Get a random index number
+            Check the _promptAvailable status
+            If true: 
+                newPrompt.SetPromptAvailability(false)
+                return _promptText
+            If false: repeat until one is found with true 
+        }
+    reflecting.RunReflectingActivity() {
+        DisplayIntro()
+        DisplayPrompt(_reflectingPrompt) {
+            Console.WriteLine("Consider the following prompt:")
+            Console.WriteLine($"--- {prompt} ---")
+        }
+        Console.WriteLine();
+        Console.Write("When you have something in mind, press enter to continue. ");
+        Console.ReadLine()
+        Console.WriteLine("Now ponder each of the following questions as they related to this experience.")
+        DisplayCountdownTimer("You may begin in: ", duration) {
+                Console.Write(message)
+                Program for countdown timer
+        }
+        string[] reflectingQuestions = {See questions from instructions}
+        class GeneratePrompt newQuestion = new GeneratePrompt(reflectingQuestions)
+        Repeat for duration:
+            _question = newQuestion.GetPrompt();
+            Console.Write($"> {_question}");
+            DisplaySpinner(duration);
+            Console.WriteLine();
+        DisplayClosing()
+        counters.increaseReflectingCounter()
+        }
+    Return to Menu
+
+D- User Input 3:
+    class ListingActivity listing = new ListingActivity()
+        _activityName = "Listing"
+        _description = "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area."
+        _counter = 0;
+        string[] listingPrompts = {See prompts from instructions}
+        class GeneratePrompt newPrompt = new GeneratePrompt(listingPrompts)
+        _listingPrompt = newPrompt.GetPrompt()
+        listing.RunListingActivity() {
+            DisplayIntro()
+            DisplayPrompt(_listingPrompt)
+            DisplayCountdownTimer("You may begin in: ", duration)
+            Repeat for _duration
+                Console.Write("> ");
+                Console.ReadLine();
+                _counter += 1;
+            Console.WriteLine($"You listed {_counter} items!");
+        DisplayClosing()
+        counters.increaseListingCounter()
+        }
+    Return to Menu
+
+D. User Input 4: DisplayCounters()
+    Display the number of times each activity has been performed.
+    Use different phrases for 0, 1, or multiple times.
+    Return to Menu
+
+Exceeds Requirements
+- Make sure no random prompts/questions are selected until they have all been used at least once in that session.
+- Keeping a log of how many times activities were performed.
+

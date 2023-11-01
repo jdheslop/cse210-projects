@@ -1,0 +1,133 @@
+Base Class: Activity
+    //Attributes
+        protected string _activityName;
+        protected string _description;
+        protected int _duration;
+        protected DateTime _startTime;
+        protected DateTime _endTime;
+        protected double _activityDuration;
+        protected DateTime _spinnerStartTime;
+        protected DateTime _spinnerEndTime;
+    //Constructors
+        Activity() - No additional actions
+    //Methods
+        protected void DisplayIntro()
+        protected void DisplayClosing()
+        protected void DisplaySpinner(string message, int duration)
+        protected void DisplayCountdownTimer(string message, int countdown)
+
+Derived Class: BreathingActivity : Activity
+    //Constructors
+        BreathingActivity()
+    //Methods
+        public void RunBreathingActivity()
+        
+Derived Class: ReflectingActivity : Activity
+    //Attributes
+        private List<string> _reflectingPromptList = new List<string>();
+        private PromptList _reflectingPrompts;
+        private string _reflectingPrompt;
+        private List<string> _reflectingQuestionList = new List<string>();
+        private PromptList _reflectingQuestions;
+        private string _question;
+    //Constructors
+        ReflectingActivity()
+    //Methods
+        private string CreateReflectingPrompt(PromptList prompts)
+            This method can be used to create both the prompt and questions.
+        private void DisplayPrompt()
+        public void RunReflectingActivity()
+
+Derived Class: ListingActivity : Activity
+    //Attributes
+        private List<string> _listingPromptList = new List<string>();
+        private PromptList _listingPrompts;
+        private string _listingPrompt;
+        private int _counter;
+    //Constructors
+        ListingActivity()
+    //Methods
+        private string CreateListingPrompt(PromptList prompts)
+        private void DisplayPrompt()
+        public void RunListingActivity()
+
+Class: Menu
+    //Attributes
+        private string _menuHeader;
+        private string _menuItem1;
+        private string _menuItem2;
+        private string _menuItem3;
+        private string _menuItem4;
+        private string _menuClosing;
+        private int _userInput;
+    //Constructors
+        Menu - Define all of the string variables when calling the constructor
+            _menuHeader = "Menu Options:"
+            etc.
+    //Methods
+        public int DisplayMenu()
+
+Class: Counters
+    //Attributes
+        private int _breathingCounter
+        private int _reflectingCounter
+        private int _listingCounter
+    //Constructors
+        Counters() - sets all of the counters to 0
+    //Methods
+        public void increaseBreathingCounter()
+        public void increaseReflectingCounter()
+        public void increaseListingCounter()
+        public void DisplayCounters()
+
+Class: PromptList
+    //Attributes
+        private List<Prompt> _prompts
+        private string _prompt
+    //Constructors
+        public PromptList(List<string> prompts)
+    //Methods
+        public string GetPrompt()
+        private void CheckAllAvailabilty()
+
+Class: Prompt
+    //Attributes
+        private string _promptText
+        private bool _promptAvailable
+    //Constructors
+        Prompt(string promptText)
+    //Getters & Setters
+        public string GetPromptText()
+        public bool GetPromptAvailability()
+        public SetPromptAvailability()
+
+PROGRAM DESCRIPTION
+Create a instance of the following classes: Menu, Counters, BreathingActivity, ReflectingActivity, and ListingActivity.
+Create a while loop while the userInput is not 5.
+Display the menu and get user menu selection
+Use "if" and "else if" statements to run different aspects of the program.
+    - If the user enters 1, 2, or 3, then the program for the selected activity will run.
+    - If the user enters 5 it will display how many times each activity has been completed.
+    - If the user selects "5" then the it will display an end of program comment and change the "repeat" variable to "false".
+    - If the user enters another number, then will display an error message. 
+1: BreathingActivity
+    Display the intro text
+    Get the user input for the duration
+    Display the breathing prompts.
+    Display the closing text
+2. ReflectingActivity
+    Display the intro text
+    Display the prompt
+    Loop for the duration and display questions
+    Display the closing text
+3. ListingActivity
+    Display the intro text
+    Display the prompt
+    Loop for the duration and prompt the user to enter text
+    Count the number of user entries
+    Display the closing text
+4. Counters
+    After each activity, increase the counter for the activity.
+
+
+
