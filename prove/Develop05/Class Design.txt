@@ -1,0 +1,95 @@
+
+Base Class: Goal
+//Attributes
+    protected string _goalType
+    protected string _goalName
+    protected string _goalDescription
+    protected int _goalPoints
+    protected bool _isComplete
+//Methods
+    protected void CreateNewGoal
+    protected void abstract DisplayGoal
+    protected void abstract RecordEvent
+    protected bool GetIsComplete
+    protected void SetIsComplete(bool status)
+
+Derived Class: SimpleGoal
+//Attributes
+    No additional attributes
+//Constructor
+    public SimpleGoal 
+        _goalType = "SimpleGoal"
+        _isComplete = false
+//Methods    
+    protected void override DisplayGoal
+    protected void override RecordEvent
+
+Derived Class: EternalGoal
+//Attributes
+    No additional attributes
+//Constructor
+    public EternalGoal 
+        _goalType = "EternalGoal"
+//Methods    
+    protected void override DisplayGoal
+    protected void override RecordEvent
+
+Derived Class: ChecklistGoal
+//Attributes
+    private int _goalQuantity
+    private int _goalBonus
+//Constructor
+    public ChecklistGoal 
+        _goalType = "ChecklistGoal"
+        _isComplete = false
+//Methods    
+    private void CreateChecklistGoal
+    protected void override DisplayGoal
+    protected void override RecordEvent
+
+
+Class: GoalOverview
+//Attributes
+    List<Goal> _goals 
+
+Class: File
+
+Class: Menu
+Derived Class: MainMenu
+Derived Class: CreateGoalMenu
+Derived Class: RecordEventMenu
+
+
+PROGRAM DESCRIPTION
+1. Display a main menu
+2. Menu selection 1: Displays a menu to create a goal
+    Simple Goals
+        Name of the goal
+        Description of the goal
+        Number of points for the goal
+    Eternal Goals
+        Name of the goal
+        Description of the goal
+        Number of points for the goal
+    Checklist Goals
+        Name of the goal
+        Description of the goal
+        Number of points for the goal
+        Number of bonus points
+        How often to complete the goal
+3. Menu selection 2: Displays the goals
+4. Menu selection 3: Saves the goals to a file
+5. Menu selection 4: Loads the goals from a file
+6. Menu selection 5: Records achieving a goal
+    Simple Goals
+        Get the points
+        Change status to completed
+    Eternal Goals
+        Get the points
+    Checklist Goals
+        Get the points
+        Increase the counter
+        When the counter = the target 
+            Get the bonus points
+            Change status to completed
+7. Menu selection 6: Quits
