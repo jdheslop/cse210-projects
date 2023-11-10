@@ -1,40 +1,66 @@
 
-Base Class: Goal
+Class: GoalOverview
+//Attributes
+    private List<Goal> _goals
+    private int _totalPoints
+    private string _fileName
+//Constructor
+public GoalOverview
+    _totalPoints = 0
+//Methods
+    public void AddGoaltoList(Goal goal)
+    public int IncreaseTotalPoints(int points)
+    public int GetTotalPoints()
+    public void DisplayItemsForRecordEventMenu()
+		public string GetFileName()
+    private void SaveToFile()
+    private void LoadFromFile()
+    private void CreateGoalFromString()
+
+Base Class: abstract Goal
 //Attributes
     protected string _goalType
     protected string _goalName
     protected string _goalDescription
     protected int _goalPoints
     protected bool _isComplete
+//Getters & Setters
+    protected bool GetIsComplete
+    protected void SetIsComplete(bool status)
 //Methods
     protected void CreateNewGoal
     protected void abstract DisplayGoal
     protected void abstract RecordEvent
-    protected bool GetIsComplete
-    protected void SetIsComplete(bool status)
+    public void abstract CreateStringForFileSave
+    public Goal abstract CreateGoalFromString
 
-Derived Class: SimpleGoal
+Derived Class: SimpleGoal : Goal
 //Attributes
     No additional attributes
 //Constructor
-    public SimpleGoal 
+    public SimpleGoal() 
         _goalType = "SimpleGoal"
         _isComplete = false
+    public SimpleGoal(List<string> goalString)
 //Methods    
     protected void override DisplayGoal
     protected void override RecordEvent
+    public void override CreateStringForFileSave
 
-Derived Class: EternalGoal
+Derived Class: EternalGoal : Goal
 //Attributes
     No additional attributes
 //Constructor
     public EternalGoal 
         _goalType = "EternalGoal"
+    public EternalGoal(List<string> goalString)
 //Methods    
     protected void override DisplayGoal
     protected void override RecordEvent
+    public void override CreateStringForFileSave
 
-Derived Class: ChecklistGoal
+
+Derived Class: ChecklistGoal : Goal
 //Attributes
     private int _goalQuantity
     private int _goalBonus
@@ -42,23 +68,46 @@ Derived Class: ChecklistGoal
     public ChecklistGoal 
         _goalType = "ChecklistGoal"
         _isComplete = false
+    public ChecklistGoal(List<string> goalString)
 //Methods    
     private void CreateChecklistGoal
+				Calls CreateNewGoal + additional checklist questions 
     protected void override DisplayGoal
     protected void override RecordEvent
+    public void override CreateStringForFileSave
 
-
-Class: GoalOverview
+Class: abstract Menu
 //Attributes
-    List<Goal> _goals 
+    protected int _userSelection
+    protected string _prompt
+//Methods
+    protected abstract void DisplayMenu
+    public int GetUserSelection
 
-Class: File
+Derived Class: MainMenu : Menu
+//Constructor
+    public MainMenu()
+        _userSelection = 0
+        _prompt = "Select a choice from the menu: "
+//Methods
+    protected override void DisplayMenu
 
-Class: Menu
-Derived Class: MainMenu
-Derived Class: CreateGoalMenu
-Derived Class: RecordEventMenu
+Derived Class: CreateGoalMenu : Menu
+//Constructor
+    public CreateGoalMenu()
+        _userSelection = 0
+        _prompt = "Which type of goal would you like to create?  "
+//Methods
+    protected override void DisplayMenu
 
+Derived Class: RecordEventMenu : Menu
+//Constructor
+    public RecordEventMenu()
+        _userSelection = 0
+        _prompt = "The goals are:  "
+//Methods
+    protected override void DisplayMenu
+    private void DisplayTotalPoints
 
 PROGRAM DESCRIPTION
 1. Display a main menu
