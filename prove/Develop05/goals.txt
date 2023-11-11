@@ -1,0 +1,4 @@
+TotalPoints:0
+SimpleGoal:simple|one|1|False
+EternalGoal:eternal|two|2
+ChecklistGoal:checklist|three|3|5|4|0

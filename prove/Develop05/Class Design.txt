@@ -9,10 +9,10 @@ public GoalOverview
     _totalPoints = 0
 //Methods
     public void AddGoaltoList(Goal goal)
-    public int IncreaseTotalPoints(int points)
+    public void IncreaseTotalPoints(int points)
     public int GetTotalPoints()
     public void DisplayItemsForRecordEventMenu()
-		public string GetFileName()
+    public string GetFileName()
     private void SaveToFile()
     private void LoadFromFile()
     private void CreateGoalFromString()
@@ -27,12 +27,13 @@ Base Class: abstract Goal
 //Getters & Setters
     protected bool GetIsComplete
     protected void SetIsComplete(bool status)
+    public string GetGoalName
 //Methods
     protected void CreateNewGoal
-    protected void abstract DisplayGoal
-    protected void abstract RecordEvent
-    public void abstract CreateStringForFileSave
-    public Goal abstract CreateGoalFromString
+    protected abstract void DisplayGoal
+    protected abstract void RecordEvent
+    public abstract string CreateStringForFileSave
+    public abstract void CreateGoalFromString
 
 Derived Class: SimpleGoal : Goal
 //Attributes
@@ -43,9 +44,10 @@ Derived Class: SimpleGoal : Goal
         _isComplete = false
     public SimpleGoal(List<string> goalString)
 //Methods    
-    protected void override DisplayGoal
-    protected void override RecordEvent
-    public void override CreateStringForFileSave
+    protected override void DisplayGoal
+    protected override void RecordEvent
+    public override void CreateStringForFileSave
+    public override void CreateGoalFromString
 
 Derived Class: EternalGoal : Goal
 //Attributes
@@ -55,10 +57,10 @@ Derived Class: EternalGoal : Goal
         _goalType = "EternalGoal"
     public EternalGoal(List<string> goalString)
 //Methods    
-    protected void override DisplayGoal
-    protected void override RecordEvent
-    public void override CreateStringForFileSave
-
+    protected override void DisplayGoal
+    protected override void RecordEvent
+    public override void CreateStringForFileSave
+    public override void CreateGoalFromString
 
 Derived Class: ChecklistGoal : Goal
 //Attributes
@@ -72,9 +74,10 @@ Derived Class: ChecklistGoal : Goal
 //Methods    
     private void CreateChecklistGoal
 				Calls CreateNewGoal + additional checklist questions 
-    protected void override DisplayGoal
-    protected void override RecordEvent
-    public void override CreateStringForFileSave
+    protected override void DisplayGoal
+    protected override void RecordEvent
+    public override void CreateStringForFileSave
+    public override void CreateGoalFromString
 
 Class: abstract Menu
 //Attributes
@@ -110,6 +113,11 @@ Derived Class: RecordEventMenu : Menu
     private void DisplayTotalPoints
 
 PROGRAM DESCRIPTION
+This program has three main classes:
+1. The GoalOverview class stores and works with the list of goals, total points, and saving/loading to/from the file.
+2. The base Goal and derived SimpleGoal, EternalGoal, and Checklist classes create the common and unique data for each type of goal.
+3. The base Menu and derived MainMenu, CreateGoalMenu, and RecordEventMenu classes create the menus.  
+
 1. Display a main menu
 2. Menu selection 1: Displays a menu to create a goal
     Simple Goals
@@ -142,3 +150,114 @@ PROGRAM DESCRIPTION
             Get the bonus points
             Change status to completed
 7. Menu selection 6: Quits
+
+
+PROGRAM DETAILS
+PROGRAM DESCRIPTION
+ 
+A. Display Main Menu
+    Console.WriteLine("You have 0 points.");
+    Console.WriteLine();
+    Console.WriteLine("Menu Options:);
+    Console.WriteLine("  1. Create New Goal");
+    Console.WriteLine("  2. List Goals");
+    Console.WriteLine("  3. Save Goals");
+    Console.WriteLine("  4. Load Goals");
+    Console.WriteLine("  5. Record Event");
+    Console.WriteLine("  6. Quit");
+    Console.Write("Select a choice from the menu: ");
+    _userSelection = int.Parse(Console.ReadLine());
+ 
+B. User Selection = 1. Create New Goal
+Display Create Goal Menu
+    Console.Clear()
+    Console.WriteLine("The types of Goals are:");
+    Console.WriteLine("  1. Simple Goal");
+    Console.WriteLine("  2. Eternal Goal");
+    Console.WriteLine("  3. Checklist Goal");
+    Console.WriteLine("Which type of Goal would you like to create? ");
+    _userSelection = int.Parse(Console.ReadLine());
+1. Simple Goal
+    Console.Write("What is the name of your goal? ");
+    _goalName = Console.ReadLine();
+    Console.WriteLine();
+    Console.Write("What is a short description of it? ");
+    _goalDescription = Console.ReadLine();
+    Console.WriteLine();
+    Console.Write("What is the amount of points associated with this goal? ");
+    _goalPoints = int.Parse(Console.ReadLine());
+    Console.WriteLine();
+    Return to Main Menu
+2. Eternal Goal
+    Console.Write("What is the name of your goal? ");
+    _goalName = Console.ReadLine();
+    Console.WriteLine();
+    Console.Write("What is a short description of it? ");
+    _goalDescription = Console.ReadLine();
+    Console.WriteLine();
+    Console.Write("What is the amount of points associated with this goal? ");
+    _goalPoints = int.Parse(Console.ReadLine());
+    Console.WriteLine();
+    Return to Main Menu
+3. Checklist Goal
+    Console.Write("What is the name of your goal? ");
+    _goalName = Console.ReadLine();
+    Console.WriteLine();
+    Console.Write("What is a short description of it? ");
+    _goalDescription = Console.ReadLine();
+    Console.WriteLine();
+    Console.Write("What is the amount of points associated with this goal? ");
+    _goalPoints = int.Parse(Console.ReadLine());
+    Console.WriteLine();
+    Console.Write("How many times does this goal need to be accomplished for a bonus? ");
+    _goalQuantity = int.Parse(Console.ReadLine());
+    Console.WriteLine();
+    Console.Write("What is the bonus for accomplishing it that many times? ");
+    _goalBonus = int.Parse(Console.ReadLine());
+    Console.WriteLine();
+    Return to Main Menu
+ 
+B. User Selection = 2. List Goals
+    Console.Clear()
+    Console.WriteLine("The goals are:");
+    Console.WriteLine("1. [ ] _goalName (_goalDescription)");
+    For Checklist Goals:
+        Console.WriteLine("1. [ ] _goalName (_goalDescription) -- Currently completed: _completedQuantity / _goalQuantity");
+    Display Main Menu
+ 
+C. User Selection = 3. Save Goals
+    Console.Write("What is the filename for the goal file? ");
+    _goalFile = Console.ReadLine();
+    Console.WriteLine();
+ 
+    The number of points is saved on the first line and then each goal is saved after that:
+        SimpleGoal:name,description,points,False
+        EternalGoal:name,description,points
+        ChecklistGoal:name,description,points,bonusPoints,_goalQuantity,_completedQuantity
+ 
+D. User Selection = 4. Load Goals
+    Console.Write("What is the filename for the goal file? ");
+    _goalFile = Console.ReadLine();
+    Console.WriteLine();
+ 
+E. User Selection = 5. Record Event
+    Console.Clear()
+    Console.WriteLine("The goals are:");
+    Console.WriteLine("1. _goalName");
+    Console.Write("Which goal did you accomplish? ");
+    _accomplishedGoal = int.Parse(Console.ReadLine());
+    Console.WriteLine();
+    Console.WriteLine("Congratulations! You have earned _goalPoints points!");
+    Console.WriteLine("You now have _totalPoints.");
+    Console.WriteLine();
+    Display Main Menu
+    Add a cancel option
+ 
+    If it was a simple goal that was completed, then for 2. List Goals, it would have an [X] when displaying.
+    If a checklist goal was done, then for 2. List Goals it will increase the _completedQuantity counter.
+    When completing all of the _goalQuantity then the _goalBonus is given and the [X] displayed.
+ 
+Exceeding Requirements:
+    Seperate 2. List Goals to be Open Goals and Completed Goals
+    For a checklist goal: Don't let them go over 
+    Have the option to add a random SimpleGoal
