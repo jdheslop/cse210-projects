@@ -7,6 +7,17 @@ public class SimpleGoal : Goal
         _goalType = "SimpleGoal";
         _isComplete = false;
     }
+
+    public SimpleGoal(string goalString)
+    {
+        string[] parts = goalString.Split("|");
+        _goalType = "SimpleGoal";
+        _goalName = parts[0];
+        _goalDescription = parts[1];
+        _goalPoints = int.Parse(parts[2]);
+        _isComplete = Convert.ToBoolean(parts[3]);
+    }
+
     public SimpleGoal(int random)
     {
         _goalType = "SimpleGoal";
@@ -28,16 +39,6 @@ public class SimpleGoal : Goal
         _goalName = randomGoals[randomIndex];
     }
 
-    public SimpleGoal(string goalString)
-    {
-        string[] parts = goalString.Split("|");
-        _goalType = "SimpleGoal";
-        _goalName = parts[0];
-        _goalDescription = parts[1];
-        _goalPoints = int.Parse(parts[2]);
-        _isComplete = Convert.ToBoolean(parts[3]);
-    }
-    
     //Methods    
     public override void DisplayGoal()
     {

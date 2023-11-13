@@ -13,11 +13,6 @@ public abstract class Goal
     {
         return _isComplete;
     }
-
-    public void SetIsComplete(bool status)
-    {
-        _isComplete = status;
-    }
     
     public string GetGoalName()
     {

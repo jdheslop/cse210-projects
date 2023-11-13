@@ -42,8 +42,7 @@ class Program
                 else if (userGoalInput == 4)
                 {
                     Random random = new Random();
-                    int randomNumber = random.Next(1, 51);
-
+                    int randomNumber = random.Next(1, 26);
                     SimpleGoal newGoal = new SimpleGoal(randomNumber);
                     goalOverview.AddGoaltoList(newGoal);
                 } 

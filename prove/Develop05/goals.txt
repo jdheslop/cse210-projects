@@ -1,5 +1,5 @@
 TotalPoints:0
-SimpleGoal:simple|one|1|False
-EternalGoal:eternal|two|2
-ChecklistGoal:checklist|three|3|5|4|0
-SimpleGoal:simple2|four|4|False
+SimpleGoal:Simple Goal|Test Simple Goal|10|False
+EternalGoal:Eternal Goal|Test Eternal Goal|10
+ChecklistGoal:Checklist Goal|Test Checklist Goal|10|100|2|0
+SimpleGoal:Read scriptures|Random|16|False

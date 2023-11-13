@@ -1,6 +1,6 @@
 using System;
 using System.IO;
- 
+
 public class GoalOverview
 {
     //Attributes
@@ -18,11 +18,6 @@ public class GoalOverview
     public void AddGoaltoList(Goal goal)
     {
         _goals.Add(goal);
-    }
-
-    public void IncreaseTotalPoints(int points)
-    {
-        _totalPoints += points;
     }
  
     public int GetTotalPoints()
@@ -54,6 +49,31 @@ public class GoalOverview
         Console.WriteLine();
         Console.Write("Press enter to return to the main menu.");
         Console.ReadLine();
+    }
+
+    public void RecordingEvents(int userSelection)
+    {
+        int goalsCount = _goals.Count();
+        if (userSelection <= goalsCount && userSelection > 0)
+        {
+            int position = userSelection - 1;
+            int index = 0;
+            foreach (Goal goal in _goals)
+            {
+                if (goal.GetIsComplete() == false)
+                {
+                    if (position == index)
+                    {
+                        _totalPoints += goal.RecordEvent();
+                        index += 1;
+                    }
+                    else
+                    {
+                        index += 1;
+                    }
+                }
+            }
+        }
     }
  
     public string GetFileName()
@@ -133,16 +153,6 @@ public class GoalOverview
                 ChecklistGoal goal = new ChecklistGoal(goalString);
                 _goals.Add(goal);
             }
-        }
-    }
-
-    public void RecordingEvents(int userSelection)
-    {
-        int goalsCount = _goals.Count();
-        if (userSelection <= goalsCount && userSelection > 0)
-        {
-            int index = userSelection - 1;
-            _totalPoints += _goals[index].RecordEvent();
         }
     }
 }
