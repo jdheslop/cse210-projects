@@ -3,7 +3,7 @@ public class CreateGoalMenu : Menu
     //Constructor
     public CreateGoalMenu()
     {
-        _userSelection = 0;
+        _userSelection = -1;
         _prompt = "Which type of Goal would you like to create? ";
     }
  
@@ -15,5 +15,7 @@ public class CreateGoalMenu : Menu
         Console.WriteLine("  1. Simple Goal");
         Console.WriteLine("  2. Eternal Goal");
         Console.WriteLine("  3. Checklist Goal");
+        Console.WriteLine("  4. Random Simple Goal");
+        Console.WriteLine("Enter 0 to cancel.");
     }
 }

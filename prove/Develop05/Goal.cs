@@ -24,6 +24,7 @@ public abstract class Goal
         return _goalName;
     }
 
+
     //Methods
     public void CreateNewGoal()
     {
@@ -39,9 +40,8 @@ public abstract class Goal
     }
 
     public abstract void DisplayGoal();
-    protected abstract void RecordEvent();
+    public abstract int RecordEvent();
     public abstract string CreateStringForFileSave();
-    public abstract void CreateGoalFromString();
 }
 
     

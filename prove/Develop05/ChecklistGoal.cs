@@ -55,21 +55,24 @@ public class ChecklistGoal : Goal
         Console.WriteLine($"{status} {_goalName} ({_goalDescription}) -- Currently completed: {_completedQuantity} / {_goalQuantity}");
     }
     
-    protected override void RecordEvent()
+    public override int RecordEvent()
     {
-        Console.WriteLine();
-        //STILL NEED TO DO THIS
+        int points = _goalPoints;
+        _completedQuantity += 1;
+
+        if (_completedQuantity == _goalQuantity)
+        {
+            points += _goalBonus;
+            _isComplete = true;
+        }
+
+        Console.WriteLine($"Congratulations! You have earned {points} points!");
+        return points;
     }
     
     public override string CreateStringForFileSave()
     {
         return $"{_goalType}:{_goalName}|{_goalDescription}|{_goalPoints}|{_goalBonus}|{_goalQuantity}|{_completedQuantity}";;
-    }
-
-    public override void CreateGoalFromString()
-    {
-        Console.WriteLine();
-        //STILL NEED TO DO THIS
     }
 }
 

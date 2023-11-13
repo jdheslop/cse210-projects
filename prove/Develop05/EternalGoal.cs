@@ -22,21 +22,14 @@ public class EternalGoal : Goal
         Console.WriteLine($"[ ] {_goalName} ({_goalDescription})");
     }
     
-    protected override void RecordEvent()
+    public override int RecordEvent()
     {
-        Console.WriteLine();
-        //STILL NEED TO DO THIS
+        return _goalPoints;
     }
     
     public override string CreateStringForFileSave()
     {
         return $"{_goalType}:{_goalName}|{_goalDescription}|{_goalPoints}";
-    }
-
-    public override void CreateGoalFromString()
-    {
-        Console.WriteLine();
-        //STILL NEED TO DO THIS
     }
 }
 

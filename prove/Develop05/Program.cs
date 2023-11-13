@@ -7,12 +7,12 @@ class Program
         GoalOverview goalOverview = new GoalOverview();
         MainMenu mainMenu = new MainMenu();
         CreateGoalMenu createGoalMenu = new CreateGoalMenu();
-        RecordEventMenu recordEventMenu = new RecordEventMenu();
  
-        int userInput = 0;
+        int userInput = -1;
  
-        while (userInput != 9)
+        while (userInput != 0)
         {
+            mainMenu.DisplayTotalPoints(goalOverview.GetTotalPoints());
             mainMenu.DisplayMenu();
             userInput = mainMenu.GetUserSelection();
         
@@ -38,6 +38,14 @@ class Program
                     ChecklistGoal newGoal = new ChecklistGoal();
                     newGoal.CreateChecklistGoal();
                     goalOverview.AddGoaltoList(newGoal);
+                }
+                else if (userGoalInput == 4)
+                {
+                    Random random = new Random();
+                    int randomNumber = random.Next(1, 51);
+
+                    SimpleGoal newGoal = new SimpleGoal(randomNumber);
+                    goalOverview.AddGoaltoList(newGoal);
                 } 
             }
             else if (userInput == 2)
@@ -58,10 +66,13 @@ class Program
             }
             else if (userInput == 6)
             {
+                RecordEventMenu recordEventMenu = new RecordEventMenu(goalOverview.GetGoalList());
                 recordEventMenu.DisplayMenu();
-                userInput = mainMenu.GetUserSelection();
+                int userSelection = mainMenu.GetUserSelection();
+    	        goalOverview.RecordingEvents(userSelection);
+                recordEventMenu.DisplayTotalPoints(goalOverview.GetTotalPoints());
             }
-            else if (userInput == 9)
+            else if (userInput == 0)
             {
                 Console.WriteLine("Goodbye!");
                 Console.WriteLine();
@@ -69,7 +80,8 @@ class Program
             else
             {
                 Console.WriteLine("Invalid selection. Please try again.");
-                Thread.Sleep(3000);
+                Console.Write("Press enter to return to the main menu.");
+                Console.ReadLine();
             }
         }
     }

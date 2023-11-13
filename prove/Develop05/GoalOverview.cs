@@ -29,6 +29,10 @@ public class GoalOverview
     {
         return _totalPoints;
     }
+    public List<Goal> GetGoalList()
+    {
+        return _goals;
+    }
 
     public void DisplayGoals(string prompt, bool status)
     {
@@ -50,16 +54,6 @@ public class GoalOverview
         Console.WriteLine();
         Console.Write("Press enter to return to the main menu.");
         Console.ReadLine();
-    }
-
-    public void DisplayItemsForRecordEventMenu()
-    {
-        int counter = 1;
-        foreach (Goal goal in _goals)
-        {
-            Console.WriteLine($"{counter}. {goal.GetGoalName()}");
-            counter += 1;
-        }
     }
  
     public string GetFileName()
@@ -91,7 +85,7 @@ public class GoalOverview
     public void LoadFromFile()
     {
         Console.Clear();
-        Console.WriteLine("LoadGoals");
+        Console.WriteLine("Load Goals");
         _fileName = GetFileName();
  
         if (File.Exists(_fileName))
@@ -107,8 +101,8 @@ public class GoalOverview
         else
         {
             Console.WriteLine("Invalid file name.");
-            Thread.Sleep(3000);
-            
+            Console.Write("Press enter to return to the main menu.");
+            Console.ReadLine();
         }
     }
  
@@ -139,6 +133,16 @@ public class GoalOverview
                 ChecklistGoal goal = new ChecklistGoal(goalString);
                 _goals.Add(goal);
             }
+        }
+    }
+
+    public void RecordingEvents(int userSelection)
+    {
+        int goalsCount = _goals.Count();
+        if (userSelection <= goalsCount && userSelection > 0)
+        {
+            int index = userSelection - 1;
+            _totalPoints += _goals[index].RecordEvent();
         }
     }
 }
