@@ -56,20 +56,19 @@ public class GoalOverview
         int goalsCount = _goals.Count();
         if (userSelection <= goalsCount && userSelection > 0)
         {
-            int position = userSelection - 1;
-            int index = 0;
+            int position = 1;
             foreach (Goal goal in _goals)
             {
                 if (goal.GetIsComplete() == false)
                 {
-                    if (position == index)
+                    if (userSelection == position)
                     {
                         _totalPoints += goal.RecordEvent();
-                        index += 1;
+                        position += 1;
                     }
                     else
                     {
-                        index += 1;
+                        position += 1;
                     }
                 }
             }

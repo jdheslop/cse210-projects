@@ -1,3 +1,9 @@
+/*
+Exceeding Requirements:
+- Have a menu item to display open goals and another menu item to display completed goals.
+- When creating a new goal, there is the option to create a random SimpleGoal.
+*/
+
 using System;
 
 class Program

@@ -1,5 +1,6 @@
-TotalPoints:0
-SimpleGoal:Simple Goal|Test Simple Goal|10|False
+TotalPoints:140
+SimpleGoal:Simple Goal|Test Simple Goal|10|True
 EternalGoal:Eternal Goal|Test Eternal Goal|10
-ChecklistGoal:Checklist Goal|Test Checklist Goal|10|100|2|0
+ChecklistGoal:Checklist Goal|Test Checklist Goal|10|100|2|2
 SimpleGoal:Read scriptures|Random|16|False
+SimpleGoal:Plant a tree|Random|24|False

@@ -66,6 +66,7 @@ Derived Class: ChecklistGoal : Goal
 //Attributes
     private int _goalQuantity
     private int _goalBonus
+    private int _completedQuantity
 //Constructor
     public ChecklistGoal 
         _goalType = "ChecklistGoal"
@@ -258,6 +259,6 @@ E. User Selection = 5. Record Event
     When completing all of the _goalQuantity then the _goalBonus is given and the [X] displayed.
  
 Exceeding Requirements:
-    Seperate 2. List Goals to be Open Goals and Completed Goals
-    For a checklist goal: Don't let them go over 
-    Have the option to add a random SimpleGoal
+- Have a menu item to display open goals and another menu item to display completed goals.
+- When creating a new goal, there is the option to create a random SimpleGoal.
+    
