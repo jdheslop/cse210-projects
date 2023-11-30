@@ -1,0 +1,67 @@
+Final Project Plan
+Jackson Heslop
+
+Open-Ended Project
+
+In my professional, private, and Church responsibilities, I meet a lot of people and participate in a lot of meetings and discussions. Because of the amount of discussions and people, I sometimes find it difficult to remember key information, my to do items, and items to discuss with others. I would like to write a program to help me track these items.
+
+The program will track the following items:
+- To Do Items (items for me to do)
+    - Items with no date
+    - Items with a target date
+- Items to discuss with others
+    - Items with no date
+    - Items with a target date
+- Items which are information that are associated with a person or meetings
+    - Items of information
+    - To do Items for me
+    - Items to discuss with others
+
+The program will need to have a series of menus to show the available options. 
+    - Display To Do Items (with option to close items)
+        - for today
+        - overdue
+        - no date
+    - Display Items to Discuss (with option to close items)
+    - Display Future Items (with option to close items)
+    - Display Closed Items
+    - Display Notes from a Meeting (with option to close a meeting)
+        - Add items to a meeting
+    - Create a New Meeting or Person
+    - Create a To Do Item (assigned to either a person or date)
+    - Save to File
+        - People
+        - Meetings
+        - Items
+    - Load from File
+        - People
+        - Meetings
+        - Items
+    - Quit
+
+
+
+
+Maybe:
+- Prep Items: Notes that I can make to prepare for meetings.
+- Birthday
+- ToDo items that repeat
+- Meetings are repeat meetings or single meetings
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

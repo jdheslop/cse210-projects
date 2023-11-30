@@ -1,0 +1,129 @@
+Final Project - Design Activity
+Jackson Heslop
+
+Open-Ended Project
+
+The Overview class tracks the my To Do Items, the meetings, and people.
+The Item classes contains the information and status of the to do items and information items.
+The Category classes contain the People and Meetings that I can assign items to.
+The Menu classes display the various menus needed to display or gather in the information. 
+
+Class: Overview
+//Attributes
+    private List<Item> _myToDoItems
+    private List<Category> _categories
+    private string _fileNameToDoItems
+    private string _fileNameCategories
+    private string _fileNameCategoryItems
+// Constructor
+    public Overview
+//Methods
+    public void AddToMyToDoList(ItemToDo item)
+    public List<ItemToDo> GetMyToDoItems()
+    public void SaveToFile()
+    public void LoadFromFile()
+    private void CreateObjectFromString(string line)
+    public void AddCategorytoList(Category category)
+    public List<Category> GetCategoryList
+    public void DisplayCategories
+
+Base Class: abstract Item
+//Attributes
+    protected string _itemDescription;
+//Methods
+    protected virtual void GatherItemData()
+    public string GetItemDescription()
+    public abstract string CreateStringForFileSave()
+
+Derived Class: ItemToDo : Item
+// Attributes
+    private DateTime _dueDate;
+    private bool _isCompleted;
+//Constructor
+    public ItemToDo()
+    public ItemToDo(string objectString)
+//Methods  
+    protected override void GatherItemData()
+    public string ToDoDateStatus()
+    public bool GetIsCompleted()
+    public override string CreateStringForFileSave()
+
+Derived Class: ItemInfo : Item
+//Constructor
+    public ItemInfo()
+    public ItemInfo(string objectString)
+    //Methods  
+    public override string CreateStringForFileSave()
+
+Base Class: abstract Category
+//Attributes
+    private List<Item> _items
+    private string _categoryName
+//Methods
+    protected abstract void GatherCategoryData()
+    public abstract string CreateStringForFileSave()
+    public void AddToCategoryToDoList(ItemToDo item)
+
+Derived Class: CategoryPerson : Category
+//Attributes
+    private string _nameOfPerson
+//Constructors
+    public CategoryPerson()
+    public CategoryPerson(string objectString)
+//Methods
+    protected abstract void GatherCategoryData()
+    public abstract string CreateStringForFileSave()
+
+Derived Class: CategoryMeeting : Category
+//Attributes
+    private string _meetingDate
+    private string _participants
+//Constructors
+    public CategoryMeeting()
+    public CategoryMeeting(string objectString)
+//Methods
+    protected abstract void GatherCategoryData()
+    public abstract string CreateStringForFileSave()
+
+Class: abstract Menu
+//Attributes
+    protected int _userSelection
+    protected string _prompt
+//Methods
+    public abstract void DisplayMenu()
+    public int GetUserSelection()
+
+Derived Class: MenuMain : Menu
+//Constructor
+    public MenuMain()
+//Methods  
+    public override void DisplayMenu()
+
+Derived Class: MenuOpenToDoItems : Menu
+//Attributes
+    private List<ItemToDo> _myToDoList;
+//Constructor
+    public MenuOpenToDoItems(List<ItemToDo> myToDoItems)
+//Methods  
+    public override void DisplayMenu()
+    private int DisplayToDoItems(string status, bool completedStatus, int counter)
+
+Derived Class: MenuItemsToDiscuss : Menu
+//Attributes
+    private List<ItemToDo> _toDiscussList;
+//Constructor
+    public MenuItemsToDiscuss(List<ItemToDo> toDiscussList)
+//Methods
+    public override void DisplayMenu()
+    private int DisplayToDiscussItems(string status, bool completedStatus, int counter)
+
+Derived Class: MenuFutureToDoItems : Menu
+//Attributes
+    private List<ItemToDo> _myToDoList;
+//Constructor
+    public MenuFutureToDoItems(List<ItemToDo> myToDoItems)
+//Methods  
+    public override void DisplayMenu()
+    private int DisplayToDoItems(string status, bool completedStatus, int counter)
+
+
