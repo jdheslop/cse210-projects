@@ -76,11 +76,8 @@ public class OverviewMyToDo : Overview
                 Console.WriteLine();
 
                 //This finds the item which was selected and changes _isComplete to "true"
-                int position = 1;
-                position = cat.ParseItems("today", false, position, completedItem);
-                position = cat.ParseItems("overdue", false, position, completedItem);
-                position = cat.ParseItems("noDate", false, position, completedItem);
-                position = cat.ParseItems("future", false, position, completedItem);             
+                cat.ChangeSelectedItem(completedItem);
+                cat.ClearDisplayPosition();           
             }
         }
     }

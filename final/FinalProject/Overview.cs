@@ -6,10 +6,34 @@ public abstract class Overview
     protected string _fileNameItems;
 
     //Methods
+
+    public void ClearDisplayPosition()
+    {
+        foreach (Category cat in _categories)
+        {
+            cat.SetDisplayPosition(0);
+            cat.ClearDisplayPosition();
+        }
+    }
+
+    public void ChangeSelectedCategory(int selectedCategory)
+    {
+        foreach (Category cat in _categories)
+        {
+            if (selectedCategory == cat.GetDisplayPosition())
+            {
+                
+            }
+        }
+    }
+
     protected void DisplayCategories()
     {
         //NEED TO DO
     }
+
+
+
 
     protected void AddItemToCategoryList()
     {

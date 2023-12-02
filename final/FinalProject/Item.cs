@@ -5,6 +5,7 @@ public abstract class Item
     protected bool _withDueDate;
     protected bool _isComplete;
     protected DateTime _dueDate;
+    int _displayPosition;
  
     //Methods  
     public bool GetWithDueDate()
@@ -22,6 +23,14 @@ public abstract class Item
     public string GetItemDescription()
     {
         return _itemDescription;
+    }
+    public void SetDisplayPosition(int position)
+    {
+        _displayPosition = position;
+    }
+    public int GetDisplayPosition()
+    {
+        return _displayPosition;
     }
 
     public abstract string CreateStringForFileSave();

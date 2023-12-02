@@ -36,6 +36,7 @@ public class OverviewPeople : Overview
         foreach (Category cat in _categories)
         {
             Console.WriteLine($"{counter}. {cat.GetCategoryName()}");
+            cat.SetDisplayPosition(counter);
             counter += 1;
         }
 
@@ -53,23 +54,18 @@ public class OverviewPeople : Overview
             string itemDescription = Console.ReadLine();
             Console.WriteLine();
 
-            int position = 1;
             string selectedPerson = "No One";
             foreach (Category cat in _categories)
             {
-                if (position == selectedNumber)
+                if (selectedNumber == cat.GetDisplayPosition())
                 {
                     selectedPerson = cat.GetCategoryName();
-                    position += 1;
-                }
-                else
-                {
-                    position += 1;
                 }
             }
 
             ItemNoDate newItem = new ItemNoDate(itemDescription);
             AddItemToCategoryItemList(newItem, selectedPerson);
+            ClearDisplayPosition();
         }
         else if (selectedNumber == 0)
         {}
@@ -92,6 +88,8 @@ public class OverviewPeople : Overview
         }
 
         // NEED TO ADD HOW TO CHANGE THE _isComplete TO TRUE
+        
+        ClearDisplayPosition();
     }
 
     public void AddDiscussFromMeeting(List<string> items)

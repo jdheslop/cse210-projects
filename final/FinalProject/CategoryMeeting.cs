@@ -31,10 +31,6 @@ public class CategoryMeeting : Category
         return 1;
     }
 
-    public override int ParseItems(string status, bool completedStatus, int position, int completedItem)
-    {
-        //NEED TO DO 
-        return 1;
-    }
+
 
 }

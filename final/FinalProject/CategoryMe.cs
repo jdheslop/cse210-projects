@@ -32,31 +32,11 @@ public class CategoryMe : Category
             {
                 Console.Write($"{counter}. ");    
                 Console.WriteLine(item.GetItemDescription());
+                item.SetDisplayPosition(counter);
                 counter += 1;
             }
         }
         return counter;
-    }
-
-    public override int ParseItems(string status, bool completedStatus, int position, int completedItem)
-    {
-        foreach (Item item in _items)
-        {
-            string toDoDateStatus = item.ToDoDateStatus();
-            if (toDoDateStatus == status && item.GetIsComplete() == completedStatus)
-            {
-                if (completedItem == position)
-                {
-                    item.SetIsComplete(true);
-                    position += 1;
-                }
-                else
-                {
-                    position += 1;
-                }
-            }
-        }
-        return position;        
     }
 
 }

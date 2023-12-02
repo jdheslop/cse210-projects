@@ -37,17 +37,13 @@ public class CategoryPerson : Category
                 if (item.GetIsComplete() == completedStatus)
                 {
                     Console.WriteLine($"{counter}. {item.GetItemDescription()}");
+                    item.SetDisplayPosition(counter);
+                    counter += 1;
                 }
             }
             Console.WriteLine();
         }
         return counter;
-    }
-
-    public override int ParseItems(string status, bool completedStatus, int position, int completedItem)
-    {
-        //NEED TO DO 
-        return 1;
     }
 
 }

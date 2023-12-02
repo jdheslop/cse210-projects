@@ -8,6 +8,10 @@ class Program
         OverviewMyToDo myToDo = new OverviewMyToDo();
         OverviewPeople people = new OverviewPeople();
 
+        //Automatically loads saved data at the start of the program
+        myToDo.LoadFromFile();
+        people.LoadFromFile();
+
         int userInput = -1;
 
         while (userInput != 0)

@@ -3,6 +3,7 @@ public abstract class Category
     //Attributes
     protected List<Item> _items = new List<Item>();
     protected string _categoryName;
+    int _displayPosition;
 
     //Methods
 
@@ -15,12 +16,37 @@ public abstract class Category
     {
         _items.Add(item);
     }
+    public void SetDisplayPosition(int position)
+    {
+        _displayPosition = position;
+    }
+    public int GetDisplayPosition()
+    {
+        return _displayPosition;
+    }
 
     public abstract string CreateStringForFileSave();
 
     public abstract int DisplayItems(string status, bool completedStatus, int counter);
 
-    public abstract int ParseItems(string status, bool completedStatus, int position, int completedItem);
+    public void ChangeSelectedItem(int selectedItem)
+    {
+        foreach (Item item in _items)
+        {
+            if (selectedItem == item.GetDisplayPosition())
+            {
+                item.SetIsComplete(true);
+            }
+        }
+    }
+
+    public void ClearDisplayPosition()
+    {
+        foreach (Item item in _items)
+        {
+            item.SetDisplayPosition(0);
+        }
+    }
 
     protected abstract void GatherCategoryData();
 
