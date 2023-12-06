@@ -4,16 +4,11 @@ class Program
 {
     static void Main(string[] args)
     {
+        //Instantiate the main classes
         MainMenu mainMenu = new MainMenu();
         OverviewMyToDo myToDo = new OverviewMyToDo();
         OverviewPeople people = new OverviewPeople();
         OverviewMeeting meeting = new OverviewMeeting();
-
-        //Automatically loads saved data at the start of the program
-        //PLEASE USE THE TEXT FILES THAT HAVE BEEN SENT WITH THE PROGRAM
-        myToDo.LoadFromFile();
-        people.LoadFromFile();
-        meeting.LoadFromFile();
 
         int userInput = -1;
 
