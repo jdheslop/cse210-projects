@@ -2,7 +2,6 @@ public class ItemDueDate : Item
 {
     //Attributes
 
-
     //Constructors
     public ItemDueDate(string dueDate, string description)
     {
@@ -26,8 +25,5 @@ public class ItemDueDate : Item
     {
         return $"ItemDueDate°{_itemDescription}|{_withDueDate}|{_isComplete}|{_dueDate}";
     }  
-
-
-
 
 }

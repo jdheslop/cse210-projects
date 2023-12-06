@@ -1,1 +1,6 @@
-Tony§ItemNoDate°Talk with Tony|False|False
+Sophia§ItemNoDate°This is an item to discuss with Sophia.|False|False
+Sophia§ItemNoDate°This is a to do item from a meeting to discuss with Sophia. This will be closed later.|False|True
+Jonathan§ItemNoDate°This is an item to discuss with Jonathan|False|False
+Jonathan§ItemNoDate°This is an item to discuss with Jonathan that will be closed|False|True
+Mara§ItemNoDate°This is an item to discuss with Mara|False|False
+Mara§ItemNoDate°This is a to do item from a meeting to discuss with Mara|False|False

@@ -6,28 +6,30 @@ public abstract class Category
     int _displayPosition;
 
     //Methods
-
     public string GetCategoryName()
     {
         return _categoryName;
+    }
+
+    public List<Item> GetItems()
+    {
+        return _items;
     }
 
     public void AddToItemList(Item item)
     {
         _items.Add(item);
     }
+
     public void SetDisplayPosition(int position)
     {
         _displayPosition = position;
     }
+
     public int GetDisplayPosition()
     {
         return _displayPosition;
     }
-
-    public abstract string CreateStringForFileSave();
-
-    public abstract int DisplayItems(string status, bool completedStatus, int counter);
 
     public void ChangeSelectedItem(int selectedItem)
     {
@@ -40,7 +42,7 @@ public abstract class Category
         }
     }
 
-    public void ClearDisplayPosition()
+    public void ClearDisplayPositionInItems()
     {
         foreach (Item item in _items)
         {
@@ -48,17 +50,12 @@ public abstract class Category
         }
     }
 
-    protected abstract void GatherCategoryData();
-
-    public void SaveItemsToFile(string fileName, string categoryName)
+    public void SaveItemsToFile(StreamWriter itemOutputFile, string categoryName)
     {
-        using (StreamWriter outputFile = new StreamWriter(fileName))
-        {
-            foreach (Item item in _items)
+        foreach (Item item in _items)
             {
-                outputFile.WriteLine($"{categoryName}§{item.CreateStringForFileSave()}");
+                itemOutputFile.WriteLine($"{categoryName}§{item.CreateStringForFileSave()}");
             }
-        }
     }
 
     public List<Item> LoadFromItemFile(string fileName,  string categoryName)
@@ -70,6 +67,13 @@ public abstract class Category
 
         foreach (string line in fileAsList)
         {
+            CreateItemList(categoryName, tempItemList, line);
+        }
+        return tempItemList;
+    }
+
+    private List<Item> CreateItemList(string categoryName, List<Item> tempItemList, string line)
+    {
             string[] splitList = line.Split("§");
             string catName = splitList[0];
 
@@ -93,12 +97,13 @@ public abstract class Category
                     tempItemList.Add(newItem);
                 }
             }
-        }
+
         return tempItemList;
-
-
     }
 
-    
+    public abstract string CreateStringForFileSave();
 
+    protected abstract void GatherCategoryData();
+
+    public abstract int DisplayItems(string status, bool completedStatus, int counter);
 }

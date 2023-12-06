@@ -16,11 +16,11 @@ public class CategoryMe : Category
     //Methods
     public override string CreateStringForFileSave()
     {
-        return $"CategoryMe|{_categoryName}";
+        return $"CategoryMe§{_categoryName}";
     }
+
     protected override void GatherCategoryData()
     {
-        //NEED TO DO THIS
     }
 
     public override int DisplayItems(string status, bool completedStatus, int counter)

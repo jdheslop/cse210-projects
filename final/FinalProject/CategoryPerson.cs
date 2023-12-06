@@ -16,8 +16,9 @@ public class CategoryPerson : Category
     //Methods
     public override string CreateStringForFileSave()
     {
-        return $"CategoryPerson|{_categoryName}";
+        return $"CategoryPerson§{_categoryName}";
     }
+
     protected override void GatherCategoryData()
     {
         Console.WriteLine("What is the name of the person: ");
@@ -41,9 +42,7 @@ public class CategoryPerson : Category
                     counter += 1;
                 }
             }
-            Console.WriteLine();
         }
         return counter;
     }
-
 }

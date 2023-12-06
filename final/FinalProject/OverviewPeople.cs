@@ -5,14 +5,11 @@ public class OverviewPeople : Overview
     //Constructors
     public OverviewPeople()
     {
-        CategoryPerson noOne = new CategoryPerson("No One");
-        _categories.Add(noOne);
         _fileNameCategories = "FilePeopleCategories.txt";
         _fileNameItems = "FilePeopleItems.txt";
     }
 
     //Methods
-
     public void CreateNewPerson()
     {
         Console.Clear();
@@ -24,7 +21,7 @@ public class OverviewPeople : Overview
         _categories.Add(newPerson);
     }
 
-    public override void CreateNewItem()
+    public void CreateNewItem()
     {
         Console.Clear();
         Console.WriteLine();
@@ -84,18 +81,37 @@ public class OverviewPeople : Overview
         int counter = 1;
         foreach (Category cat in _categories)
         {
-            counter = cat.DisplayItems("na", false, counter);
+            List<Item> tempItemsList = cat.GetItems();
+            bool allCompleted = true;
+
+            foreach (Item item in tempItemsList)
+            {
+                if (item.GetIsComplete() == false)
+                {
+                    allCompleted = false;                    
+                }
+            }
+
+            if (allCompleted == false)
+            { 
+                counter = cat.DisplayItems("na", false, counter);
+                Console.WriteLine();
+            }
         }
 
-        // NEED TO ADD HOW TO CHANGE THE _isComplete TO TRUE
+        Console.WriteLine("Enter 0 to quit.");
+        Console.WriteLine();
+
+        Console.Write("Which item has been completed: ");
+        int completedItem = int.Parse(Console.ReadLine());
+        Console.WriteLine();
+
+        foreach (Category cat in _categories)
+        {
+            cat.ChangeSelectedItem(completedItem);
+        }
         
         ClearDisplayPosition();
     }
-
-    public void AddDiscussFromMeeting(List<string> items)
-    {
-        //NEED TO DO
-    }
-
 
 }

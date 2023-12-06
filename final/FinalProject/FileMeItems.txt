@@ -1,4 +1,11 @@
-Jackson§ItemDueDate°Today|True|False|30.11.2023 00:00:00
-Jackson§ItemDueDate°Tomorrow|True|False|01.01.2024 00:00:00
-Jackson§ItemDueDate°Yesterday|True|False|08.08.2023 00:00:00
-Jackson§ItemNoDate°No date|False|False
+Jackson§ItemDueDate°This is a to do item that is due on December 6th|True|False|06.12.2023 00:00:00
+Jackson§ItemDueDate°This is a to do item that is due on December 9th|True|False|09.12.2023 00:00:00
+Jackson§ItemDueDate°This is a to do item that is due on December 10th|True|False|10.12.2023 00:00:00
+Jackson§ItemDueDate°This is a to do item that is due on December 11th|True|False|11.12.2023 00:00:00
+Jackson§ItemDueDate°This is a to do item that is due on December 12th|True|False|12.12.2023 00:00:00
+Jackson§ItemDueDate°This is a to do item that is due on December 13th|True|False|13.12.2023 00:00:00
+Jackson§ItemNoDate°This is a to do item that has no due date|False|False
+Jackson§ItemDueDate°This is a to do item that is due on December 5th|True|True|05.12.2023 00:00:00
+Jackson§ItemDueDate°This is a to do item from a meeting that is due on December 6th|True|False|06.12.2023 00:00:00
+Jackson§ItemNoDate°This is a to do item from a meeting that has no due date|False|False
+Jackson§ItemNoDate°This is a to do item from a meeting that will be closed|False|True

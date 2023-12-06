@@ -7,10 +7,13 @@ class Program
         MainMenu mainMenu = new MainMenu();
         OverviewMyToDo myToDo = new OverviewMyToDo();
         OverviewPeople people = new OverviewPeople();
+        OverviewMeeting meeting = new OverviewMeeting();
 
         //Automatically loads saved data at the start of the program
+        //PLEASE USE THE TEXT FILES THAT HAVE BEEN SENT WITH THE PROGRAM
         myToDo.LoadFromFile();
         people.LoadFromFile();
+        meeting.LoadFromFile();
 
         int userInput = -1;
 
@@ -24,6 +27,9 @@ class Program
                 //Create a New To Do Item
                 myToDo.CreateNewItem();
 
+                Console.WriteLine();
+                Console.Write("Press enter to return to the main menu.");
+                Console.ReadLine();
             }
             else if (userInput == 2)
             {
@@ -62,6 +68,7 @@ class Program
             else if (userInput == 6)
             {
                 //Create a New Meeting
+                meeting.CreateNewMeeting(people.GetCategories(), myToDo.GetCategories());
 
                 Console.Write("Press enter to return to the main menu.");
                 Console.ReadLine();
@@ -70,12 +77,17 @@ class Program
             else if (userInput == 7)
             {
                 //Display Notes from a Meeting
+                meeting.DisplayOpenItems();
+
+                Console.Write("Press enter to return to the main menu.");
+                Console.ReadLine();
             }
             else if (userInput == 8)
             {
                 //Save Data to File
                 myToDo.SaveToFile();
                 people.SaveToFile();
+                meeting.SaveToFile();
                 
                 Console.Clear();
                 Console.WriteLine();
@@ -90,6 +102,7 @@ class Program
                 //Load Data from File
                 myToDo.LoadFromFile();
                 people.LoadFromFile();
+                meeting.LoadFromFile();
 
                 Console.Clear();
                 Console.WriteLine();

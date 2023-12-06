@@ -1,1 +1,7 @@
-Tony§ItemNoDate°Talk with Tony|False|False
+Test Meeting A-2023-12-06§ItemNoDate°This is a to do item from a meeting that is due on December 6th|False|True
+Test Meeting A-2023-12-06§ItemNoDate°This is a to do item from a meeting that has no due date|False|True
+Test Meeting A-2023-12-06§ItemNoDate°This is a to do item from a meeting that will be closed|False|True
+Test Meeting A-2023-12-06§ItemNoDate°This is a to do item from a meeting to discuss with Mara|False|True
+Test Meeting A-2023-12-06§ItemNoDate°This is a to do item from a meeting to discuss with Sophia. This will be closed later.|False|True
+Test Meeting A-2023-12-06§ItemNoDate°This is a general meeting note.|False|True
+Test Meeting A-2023-12-06§ItemNoDate°This is another meeting note item.|False|True

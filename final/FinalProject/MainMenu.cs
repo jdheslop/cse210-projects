@@ -2,7 +2,6 @@ public class MainMenu
 {
     //Attributes
     protected int _userSelection;
-    protected string _prompt;
 
     //Constructor
     public MainMenu()

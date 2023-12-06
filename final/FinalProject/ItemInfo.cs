@@ -2,7 +2,6 @@ public class ItemInfo : Item
 {
     //Attributes
 
-
     //Constructors
     public ItemInfo(string description)
     {
@@ -13,19 +12,8 @@ public class ItemInfo : Item
 
     public ItemInfo(string itemDescription, string withDueDate, string isComplete)
     {
-        
         _itemDescription = itemDescription;
         _withDueDate = Convert.ToBoolean(withDueDate);
         _isComplete = Convert.ToBoolean(isComplete);
     }
-
-    //Methods
-    public override string CreateStringForFileSave()
-    {
-        return $"ItemInfo°{_itemDescription}|{_withDueDate}|{_isComplete}";
-    }  
-
-
-
-
 }

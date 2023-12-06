@@ -2,7 +2,6 @@ public class ItemNoDate : Item
 {
     //Attributes
 
-
     //Constructors
     public ItemNoDate(string description)
     {
@@ -13,19 +12,10 @@ public class ItemNoDate : Item
 
     public ItemNoDate(string itemDescription, string withDueDate, string isComplete)
     {
-        
         _itemDescription = itemDescription;
         _withDueDate = Convert.ToBoolean(withDueDate);
         _isComplete = Convert.ToBoolean(isComplete);
     }
 
     //Methods
-    public override string CreateStringForFileSave()
-    {
-        return $"ItemNoDate°{_itemDescription}|{_withDueDate}|{_isComplete}";
-    }  
-
-
-
-
 }

@@ -6,38 +6,18 @@ public abstract class Overview
     protected string _fileNameItems;
 
     //Methods
-
     public void ClearDisplayPosition()
     {
         foreach (Category cat in _categories)
         {
             cat.SetDisplayPosition(0);
-            cat.ClearDisplayPosition();
+            cat.ClearDisplayPositionInItems();
         }
     }
 
-    public void ChangeSelectedCategory(int selectedCategory)
+    public List<Category> GetCategories()
     {
-        foreach (Category cat in _categories)
-        {
-            if (selectedCategory == cat.GetDisplayPosition())
-            {
-                
-            }
-        }
-    }
-
-    protected void DisplayCategories()
-    {
-        //NEED TO DO
-    }
-
-
-
-
-    protected void AddItemToCategoryList()
-    {
-        //NEED TO DO
+        return _categories;
     }
 
     protected void AddItemToCategoryItemList(Item item, string categoryName)
@@ -51,20 +31,19 @@ public abstract class Overview
         }
     }
 
-    public abstract void CreateNewItem();
-
     public void SaveToFile()
     {
-        using (StreamWriter outputFile = new StreamWriter(_fileNameCategories))
-        {
-            foreach (Category category in _categories)
+        using (StreamWriter categoryOutputFile = new StreamWriter(_fileNameCategories))
+        {   using (StreamWriter itemOutputFile = new StreamWriter(_fileNameItems))
             {
-                outputFile.WriteLine(category.CreateStringForFileSave());
+                foreach (Category category in _categories)
+                {
+                    categoryOutputFile.WriteLine(category.CreateStringForFileSave());
 
-                category.SaveItemsToFile(_fileNameItems, category.GetCategoryName());
+                    category.SaveItemsToFile(itemOutputFile, category.GetCategoryName());
+                }
             }
         }
-
     }
 
     public void LoadFromFile()
@@ -89,9 +68,9 @@ public abstract class Overview
         }
     }
 
-    private void CreateCategoryFromString(string line)
+    protected void CreateCategoryFromString(string line)
     {
-        string[] splitList = line.Split("|");
+        string[] splitList = line.Split("§");
         string type = splitList[0];
         string objectString = splitList[1];
 
@@ -105,7 +84,10 @@ public abstract class Overview
             CategoryPerson newCategory = new CategoryPerson(objectString);
             _categories.Add(newCategory);
         }
+        else if (type == "CategoryMeeting")
+        {
+            CategoryMeeting newCategory = new CategoryMeeting(objectString);
+            _categories.Add(newCategory);
+        }
     }
-
-
 }

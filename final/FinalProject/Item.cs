@@ -8,34 +8,32 @@ public abstract class Item
     int _displayPosition;
  
     //Methods  
-    public bool GetWithDueDate()
-    {
-        return _withDueDate;
-    }
     public bool GetIsComplete()
     {
         return _isComplete;
     }
+
     public void SetIsComplete(bool status)
     {
         _isComplete = status;
     }
+
     public string GetItemDescription()
     {
         return _itemDescription;
     }
+
     public void SetDisplayPosition(int position)
     {
         _displayPosition = position;
     }
+
     public int GetDisplayPosition()
     {
         return _displayPosition;
     }
 
-    public abstract string CreateStringForFileSave();
-
-public string ToDoDateStatus()
+    public string ToDoDateStatus()
     {
         if (_withDueDate == false)
         {
@@ -60,5 +58,10 @@ public string ToDoDateStatus()
                 return "error";
             }
         }
+    }
+
+    public virtual string CreateStringForFileSave()
+    {
+        return $"ItemNoDate°{_itemDescription}|{_withDueDate}|{_isComplete}";
     }
 }

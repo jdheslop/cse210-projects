@@ -13,7 +13,7 @@ public class OverviewMyToDo : Overview
 
     //Methods
 
-    public override void CreateNewItem()
+    public void CreateNewItem()
     {
         Console.Clear();
         Console.WriteLine();
@@ -77,15 +77,8 @@ public class OverviewMyToDo : Overview
 
                 //This finds the item which was selected and changes _isComplete to "true"
                 cat.ChangeSelectedItem(completedItem);
-                cat.ClearDisplayPosition();           
+                ClearDisplayPosition();           
             }
         }
     }
-
-    public void AddItemFromMeeting(List<Item> items)
-    {
-        //NEED TO DO
-    }
-
-
 }
